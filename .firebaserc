@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kuyuy-a261e": {
+      "hosting": {
+        "LoginModulosAngular": [
+          "kuyuy-a261e"
+        ]
+      }
+    }
+  }
+}
