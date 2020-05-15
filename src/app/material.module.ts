@@ -7,6 +7,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
     imports:[
@@ -17,7 +19,9 @@ import {MatListModule} from '@angular/material/list';
         MatSelectModule,
         MatMenuModule,
         MatDividerModule,
-        MatListModule
+        MatListModule,
+        MatIconModule,
+        MatFormFieldModule
     ],
     exports:[
         MatButtonModule,
@@ -27,7 +31,9 @@ import {MatListModule} from '@angular/material/list';
         MatSelectModule,
         MatMenuModule,
         MatDividerModule,
-        MatListModule
+        MatListModule,
+        MatIconModule,
+        MatFormFieldModule
     ]
 })
 export class MaterialModule{}
