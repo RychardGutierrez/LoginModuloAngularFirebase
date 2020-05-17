@@ -1,1 +1,24 @@
-<p>register works!</p>
+<mat-card class="size-card">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+        <h2>REGISTER</h2>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="patito@example.com" [formControl]="email" formControlName="email" required />
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" formControlName="password" required />
+            <mat-error *ngIf="password.invalid"></mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button color="warn" style="width: 100%;" type="submit">REGISTER</button>
+    </form>
+    <form>
+        <p>Do you have an account?<a [routerLink]="['/login']"> Login</a></p>
+    </form>
+</mat-card>

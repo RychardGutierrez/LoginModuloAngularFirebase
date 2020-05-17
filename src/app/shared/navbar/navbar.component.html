@@ -1,15 +1,18 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>Login App</span>
-    <a mat-icon-button aria-label="Home" [routerLink] ="['/']">
+    <a mat-icon-button aria-label="Home" [routerLink]="['/']">
       <mat-icon>home</mat-icon>
     </a>
     <span class="spacer"></span>
     <section>
-      <div class="button-right">
-        <a mat-button [routerLink] ="['login']">Login</a>
-        <a mat-button [routerLink] ="['/']">Logout</a>
-        <a mat-button [routerLink] ="['/register']">Register</a>
+      <div class="button-right" *ngIf="user$ | async as statusUser; else login">
+        <a mat-button (click)="onLogout()" *ngIf="statusUser">Logout</a>     
+        <a>{{statusUser?.email}}</a>
       </div>
+      <ng-template #login>
+        <a mat-button [routerLink]="['login']">Login</a>
+        <a mat-button [routerLink]="['/register']">Register</a>
+      </ng-template>
     </section>
   </mat-toolbar-row>
